@@ -23,21 +23,21 @@ const controle = document.querySelectorAll(".controle-ajuste")
 
 controle.forEach( (elemento) => {
     elemento.addEventListener("click", (evento) => {
-        manipulaDados(evento.target.textContent)
+        manipulaDados(evento.target.textContent,evento.target.parentNode)
+        console.log(evento.target.parentNode)
         //console.log(evento.target.textContent)
     })
 })
-    
 
 
-
-function manipulaDados(operacao){
+function manipulaDados(operacao,controle){
+    const peca = controle.querySelector(".controle-contador")
 
     if(operacao === "-"){
-       braco.value = parseInt(braco.value) - 1
+    peca.value = parseInt(peca.value) - 1
        console.log("menos")
     }else{
-        braco.value = parseInt(braco.value) + 1 
+    peca.value = parseInt(peca.value) + 1 
         console.log("mais")
 
     }
